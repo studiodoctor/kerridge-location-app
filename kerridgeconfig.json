@@ -1,6 +1,0 @@
-{
-    "ClientId":"94eb850d-448f-48ef-a085-5fee4807606e.apps.kerridgecs.com",
-    "ClientSecret":"b609f130-2d13-43d4-93df-f8ab9f1cafde",
-    "KerridgeAuthApi":"https://staging.identity.eos.kerridgecs.online/",
-    "KerridgeApi":"https://staging.api.eos.kerridgecs.online/location/api/v1/locations/"
-}

@@ -1,4 +1,3 @@
-
 internal class AccessTokenRes
 {
     public int expires_in{ get; set; }
