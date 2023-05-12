@@ -1,3 +1,8 @@
+
+
+https://github.com/studiodoctor/kerridge-location-app/assets/41375536/d2800ea0-f26e-47ca-9f51-9a8f4a17fafa
+
+
 **LocationApp** : 
 LocationApp is a cross-platform mobile application built using .NET Multi-platform App UI (MAUI). This app allows users to search for a location and get information about that location, including its name, address, and coordinates.
 
