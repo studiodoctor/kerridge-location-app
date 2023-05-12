@@ -1,4 +1,4 @@
-**LocationApp**
+**LocationApp**\n
 LocationApp is a cross-platform mobile application built using .NET Multi-platform App UI (MAUI). This app allows users to search for a location and get information about that location, including its name, address, and coordinates.
 
 **Features**
