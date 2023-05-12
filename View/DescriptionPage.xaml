@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LocationApp.View.DescriptionPage"
+    xmlns:vm="clr-namespace:LocationApp.ViewModel.LocationDetailsViewModel"
+    x:Name="descriptionPage"
+    Title="DescriptionPage"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="True">
+
+    <Grid Padding="0,10,5,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Image Source="pin.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="200"
+            Grid.Row="0" />
+
+        <StackLayout Margin="20" Grid.Row="2" VerticalOptions="FillAndExpand">
+            <Label Margin="10" Text="{Binding locationDetails.name, StringFormat='Name :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+            <Label Margin="10"
+                Text="{Binding locationDetails.formatted_address, StringFormat='Formatted Address :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+            <Label Margin="10"
+                Text="{Binding locationDetails.vicinity, StringFormat='Vicinity :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+            <Label Margin="10"
+                Text="{Binding locationDetails.lat_long, StringFormat='Lat Long :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+            <Label Margin="10"
+                Text="{Binding locationDetails.utc_offset, StringFormat='UtcOffset :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+            <Label Margin="10" Text="{Binding locationDetails.url, StringFormat='Url :  {0}'}"
+                FontSize="15" HorizontalTextAlignment="Start" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
+            

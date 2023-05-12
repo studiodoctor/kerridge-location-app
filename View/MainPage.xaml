@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LocationApp.View.MainPage"
+    xmlns:vm="clr-namespace:LocationApp.ViewModel"
+    x:Name="homePage"
+    Title="HomePage"
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="True"
+    xmlns:local="clr-namespace:LocationApp.ViewModel">
+
+
+    <Grid ColumnDefinitions="*,*,*"
+        RowDefinitions="Auto,*,Auto">
+
+        <VerticalStackLayout Grid.ColumnSpan="3">
+            <SearchBar Placeholder="Enter any location name and hit enter"
+                SearchButtonPressed="OnSearchButtonPressed"
+                SearchCommandParameter="{Binding locationSearched}"
+                Text="{Binding locationSearched}"
+            />
+        </VerticalStackLayout>
+
+        <ActivityIndicator Grid.Row="1"
+            Grid.ColumnSpan="3" IsRunning="{Binding IsBusy}" VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:Name="HomeLabel" Grid.Row="1"
+            Grid.ColumnSpan="3" Margin="20,200,20,20">
+
+
+            <Label FontAttributes="Bold"
+                FontSize="25"
+                Text="Welcome to LocatonApp"
+                TextColor="Black"
+                HorizontalTextAlignment="Center">
+
+            </Label>
+
+            <Label FontSize="18"
+                Text="Please type location name in the box above and hit enter."
+                TextColor="Black"
+                HorizontalTextAlignment="Center">
+
+            </Label>
+        </StackLayout>
+        <CollectionView x:Name="myCollectionView"
+            ItemsSource="{Binding locationNames}"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionChangedCommand="{Binding SelectionChangedCommand}"
+            SelectionChangedCommandParameter="{Binding .}"
+            Margin="0,12" Grid.Row="1"
+            Grid.ColumnSpan="3">
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="1"
+                    VerticalItemSpacing="12" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal"
+                        Spacing="16">
+
+                        <Image Aspect="AspectFit"
+                            HeightRequest="50"
+                            Source="pin.png"
+                            WidthRequest="50" />
+
+                        <StackLayout Spacing="6">
+
+                            <Label FontSize="16"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding mainText}"
+                                FontAttributes="Bold"
+                                TextColor="Black">
+                            </Label>
+
+                            <Label FontSize="16"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding secondaryText}"
+                                TextColor="Black">
+                            </Label>
+                        </StackLayout>
+                        <!-- <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers> -->
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
